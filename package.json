@@ -1,0 +1,86 @@
+{
+  "name": "job-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint",
+    "build": "vue-cli-service build",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "start": "node app.js",
+    "postinstall": "npm run build",
+    "test": "nodemon app.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.0",
+    "bootstrap-vue": "^2.15.0",
+    "copy-webpack-plugin": "^6.0.2",
+    "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^4.3.0",
+    "joi": "^14.3.1",
+    "jquery": "^3.5.1",
+    "jsonwebtoken": "^8.5.1",
+    "less-loader": "^6.1.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
+    "popper.js": "^1.16.1",
+    "portfinder": "^1.0.26",
+    "sequelize": "^5.21.12",
+    "serve-static": "^1.14.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "vee-validate": "^3.3.6",
+    "vue": "^2.6.11",
+    "vue-horizontal-list": "^1.0.7",
+    "vue-router": "^3.3.4",
+    "vuex": "^3.4.0",
+    "vuex-persistedstate": "^3.0.1",
+    "vuex-router-sync": "^5.0.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-eslint": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "sequelize-cli": "^6.2.0",
+    "serve-static": "^1.14.1",
+    "vue-template-compiler": "^2.6.11",
+    "webpack-cli": "^3.3.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

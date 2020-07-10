@@ -2,18 +2,11 @@
   <div id="register">
     <b-jumbotron>
       <template v-slot:header>Register</template>
-      <template v-slot:lead
-        >Please enter your information to register a new account.</template
-      >
+      <template v-slot:lead>Please enter your information to register a new account.</template>
 
       <!-- Registration form -->
       <b-form @submit="handleSubmit" v-if="show">
-        <b-form-group
-          id="input-group-1"
-          label="First Name:"
-          label-for="input-1"
-          required
-        >
+        <b-form-group id="input-group-1" label="First Name:" label-for="input-1" required>
           <b-form-input
             id="input-1"
             v-model="form.firstname"
@@ -22,12 +15,7 @@
             placeholder="Enter first name"
           ></b-form-input>
         </b-form-group>
-        <b-form-group
-          id="input-group-2"
-          label="Last Name:"
-          label-for="input-2"
-          required
-        >
+        <b-form-group id="input-group-2" label="Last Name:" label-for="input-2" required>
           <b-form-input
             id="input-2"
             v-model="form.lastname"
@@ -36,12 +24,7 @@
             placeholder="Enter last name"
           ></b-form-input>
         </b-form-group>
-        <b-form-group
-          id="input-group-3"
-          label="Email address:"
-          label-for="input-3"
-          required
-        >
+        <b-form-group id="input-group-3" label="Email address:" label-for="input-3" required>
           <b-form-input
             id="input-3"
             v-model="form.email"
@@ -50,12 +33,7 @@
             placeholder="Enter email"
           ></b-form-input>
         </b-form-group>
-        <b-form-group
-          id="input-group-4"
-          label="Password:"
-          label-for="input-4"
-          required
-        >
+        <b-form-group id="input-group-4" label="Password:" label-for="input-4" required>
           <b-form-input
             id="input-4"
             v-model="form.password"
@@ -67,9 +45,7 @@
           ></b-form-input>
 
           <!-- This will only be shown if the preceding input has an invalid state -->
-          <b-form-invalid-feedback id="input-4-feedback"
-            >Please enter a valid password</b-form-invalid-feedback
-          >
+          <b-form-invalid-feedback id="input-4-feedback">Please enter a valid password</b-form-invalid-feedback>
         </b-form-group>
 
         <b-button id="btn" type="submit">Register</b-button>
@@ -87,7 +63,7 @@ export default {
     // Check password length
     passwordState() {
       return this.form.password.length > 7 ? true : false;
-    },
+    }
   },
   data() {
     return {
@@ -95,10 +71,10 @@ export default {
         firstname: "",
         lastname: "",
         email: "",
-        password: "",
+        password: ""
       },
       show: true,
-      error: null,
+      error: null
     };
   },
   methods: {
@@ -109,7 +85,7 @@ export default {
           firstname: this.form.firstname,
           lastname: this.form.lastname,
           email: this.form.email,
-          password: this.form.password,
+          password: this.form.password
         });
 
         let token = response.data.token;
@@ -124,8 +100,8 @@ export default {
       } catch (response) {
         this.error = `${response.message}. Please input valid email & password`;
       }
-    },
-  },
+    }
+  }
 };
 </script>
 <style>
@@ -139,7 +115,7 @@ export default {
   border: 1px solid #cccccc;
   background-color: #ffffff;
   margin: auto;
-  margin-top: 75px;
+  margin-top: 5vh;
   padding: 20px;
 }
 </style>

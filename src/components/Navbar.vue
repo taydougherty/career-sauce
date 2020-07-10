@@ -2,9 +2,7 @@
   <div id="navbar">
     <b-navbar type="dark" variant="dark">
       <!-- If logged in display user first name -->
-      <b-navbar-brand v-if="isUserLoggedIn"
-        >Welcome {{ this.firstName }}!</b-navbar-brand
-      >
+      <b-navbar-brand v-if="isUserLoggedIn">Welcome {{ this.firstName }}!</b-navbar-brand>
 
       <!-- If not logged in display company name -->
       <b-navbar-brand v-else>Welcome to Career Sauce!</b-navbar-brand>
@@ -22,8 +20,7 @@
             type="submit"
             @click="register"
             v-if="!isHidden && !isUserLoggedIn"
-            >Register</b-button
-          >
+          >Register</b-button>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -41,18 +38,18 @@ export default {
   components: {
     // Pull components to display when user is logged in
     AddJobButton,
-    AccountSettings,
+    AccountSettings
   },
   data() {
     return {
       firstName: "",
       userInfo: {},
-      isHidden: false,
+      isHidden: false
     };
   },
   computed: {
     // Check state if user is logged in
-    ...mapState(["isUserLoggedIn", "user"]),
+    ...mapState(["isUserLoggedIn", "user"])
   },
   props: ["userId"],
   mounted() {
@@ -79,8 +76,8 @@ export default {
       // Hide register button when user is on register page
       this.isHidden = true;
       this.$router.push("/register");
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -92,5 +89,13 @@ export default {
 #btn {
   background-color: #f05742;
   border-color: #f05742;
+}
+@media (max-width: 400px) {
+  .navbar-brand {
+    font-size: 1rem !important;
+  }
+  .navbar-nav > #btn {
+    font-size: 0.75rem !important;
+  }
 }
 </style>

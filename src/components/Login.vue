@@ -7,12 +7,7 @@
 
       <!-- Login form -->
       <b-form @submit="login" @reset="onReset" v-if="show">
-        <b-form-group
-          id="input-group-1"
-          label="Email address:"
-          label-for="input-1"
-          required
-        >
+        <b-form-group id="input-group-1" label="Email address:" label-for="input-1" required>
           <b-form-input
             id="input-1"
             v-model="form.email"
@@ -21,12 +16,7 @@
             placeholder="Enter email"
           ></b-form-input>
         </b-form-group>
-        <b-form-group
-          id="input-group-2"
-          label="Password:"
-          label-for="input-2"
-          required
-        >
+        <b-form-group id="input-group-2" label="Password:" label-for="input-2" required>
           <b-form-input
             id="input-2"
             v-model="form.password"
@@ -39,9 +29,7 @@
 
           <!-- This will only be shown if the preceding input has an invalid state -->
 
-          <b-form-invalid-feedback id="input-2-feedback"
-            >Please enter a valid password</b-form-invalid-feedback
-          >
+          <b-form-invalid-feedback id="input-2-feedback">Please enter a valid password</b-form-invalid-feedback>
           <p>{{ error }}</p>
         </b-form-group>
 
@@ -60,16 +48,16 @@ export default {
     // Check password length
     passwordState() {
       return this.form.password.length > 7 ? true : false;
-    },
+    }
   },
   data() {
     return {
       form: {
         email: "",
-        password: "",
+        password: ""
       },
       show: true,
-      error: null,
+      error: null
     };
   },
   methods: {
@@ -78,7 +66,7 @@ export default {
         // Authenticate user with database
         const response = await AuthenticationService.login({
           email: this.form.email,
-          password: this.form.password,
+          password: this.form.password
         });
         let token = response.data.token;
         let user = response.data.user;
@@ -103,19 +91,19 @@ export default {
       this.$nextTick(() => {
         this.show = true;
       });
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style>
 #login {
-  width: 500px;
+  max-width: 500px;
   height: 710px;
   border: 1px solid #cccccc;
   background-color: #ffffff;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 5vh;
   padding: 20px;
 }
 #btn {

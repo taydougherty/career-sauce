@@ -14,11 +14,11 @@ import Navbar from "./components/Navbar";
 export default {
   name: "App",
   components: {
-    Navbar,
+    Navbar
   },
   data() {
     return {};
-  },
+  }
 };
 </script>
 
@@ -33,11 +33,12 @@ body {
   padding: 0;
   font-family: "Raleway", sans-serif;
   background-color: #f4f6fb;
+  box-sizing: border-box;
 }
 #app {
   position: relative;
-  width: calc(100% - 20px);
-  height: calc(100vh - 20px);
+  width: 100%;
+  min-height: 100%;
   padding: 10px;
   color: #333;
   font-family: "Raleway", sans-serif;

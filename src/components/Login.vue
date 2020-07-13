@@ -74,7 +74,9 @@ export default {
         this.$store.dispatch("setToken", token);
         this.$store.dispatch("setUser", user);
         // Send user to homepage
-        this.$router.push("/home");
+        setTimeout(() => {
+          this.$router.push("/home");
+        }, 1000);
       } catch (err) {
         this.error = err.response.data.error;
         console.log(this.error);

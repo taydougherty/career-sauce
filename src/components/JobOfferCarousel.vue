@@ -1,7 +1,10 @@
 <template>
   <section>
     <div>
-      <h3>Well Done <span class="explanation">(Jobs with offers!)</span></h3> 
+      <h3>
+        Well Done: {{items.length}}
+        <span class="explanation">(Jobs with offers!)</span>
+      </h3>
       <!-- Carousel  -->
       <vue-horizontal-list :items="items">
         <template v-slot:default="{ item }">
@@ -10,9 +13,7 @@
             <div class="aspect r-10-12 border-3 overflow-hidden">
               <div class="relative wh-100 lh-0">
                 <div class="bg-overlay absolute-0 wh-100 p-24 flex-end">
-                  <h4 class="m-0 text-ellipsis-2l text-center white">
-                    {{ item.company }}
-                  </h4>
+                  <h4 class="m-0 text-ellipsis-2l text-center white">{{ item.company }}</h4>
                 </div>
               </div>
             </div>
@@ -31,24 +32,22 @@ import { mapState } from "vuex";
 import VueHorizontalList from "vue-horizontal-list";
 import JobAppCard from "./jobAppCard/JobAppCard.vue";
 import ApplicationService from "../Services/ApplicationService";
-import randomColor from "../helpers/randomColor"
+import randomColor from "../helpers/randomColor";
 
 export default {
   name: "OfferCarousel",
   components: {
     VueHorizontalList,
-    JobAppCard,
+    JobAppCard
   },
-  mixins: 
-    [randomColor]
-  ,
+  mixins: [randomColor],
   data() {
     return {
-      items: [],
+      items: []
     };
   },
   computed: {
-    ...mapState(["isUserLoggedIn", "user"]),
+    ...mapState(["isUserLoggedIn", "user"])
   },
   // API call
   created() {

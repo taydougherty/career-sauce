@@ -78,7 +78,15 @@
             required
           ></b-form-select>
         </b-form-group>
-        <b-button type="submit" id="btn" @click="onSubmit">Submit</b-button>
+        <b-button
+          type="submit"
+          id="btn"
+          @click="
+            onSubmit();
+            toast('b-toaster-top-right');
+          "
+          >Submit</b-button
+        >
       </b-form>
     </b-modal>
   </div>
@@ -101,7 +109,13 @@ export default {
         Source: "",
         Status: "",
       },
-      Statuses: ["Grocery List", "In The Oven", "Taste Test", "Well Done", "Burnt"],
+      Statuses: [
+        "Grocery List",
+        "In The Oven",
+        "Taste Test",
+        "Well Done",
+        "Burnt",
+      ],
       show: true,
       error: null,
     };
@@ -146,9 +160,18 @@ export default {
       this.form.Description = "";
       this.form.Source = "";
     },
+
     showAddModal() {
       this.showModal = true;
       this.$bvModal.show("modal");
+    },
+
+    toast() {
+      this.$bvToast.toast(`Your job application has been added!`, {
+        title: "Success",
+        autoHideDelay: 5000,
+        solid: true,
+      });
     },
   },
 };
